@@ -5,55 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-100 text-gray-900">
+    <script src="https://cdn.tailwindcss.com"></script>
 
-<header class="bg-white shadow">
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: '#DAD7CD',
+                secondary: '#A3B18A',
+                accent: '#588157',
+                highlight: '#344E41',
+                background: '#3A5A40',
+                foreground: '#A3B18A'
+              }
+            }
+          }
+        }
+      </script>
+</head>
+<body class="bg-background">
+
+<header class="bg-foreground shadow">
     <nav class="container mx-auto p-4 flex justify-between items-center">
-        <h1 class="text-2xl font-bold">JoThurst Dev</h1>
+        <h1 class="text-2xl font-bold text-highlight">JoThurst Dev</h1>
         <ul class="flex space-x-4">
-            <li><a href="#hero" class="hover:underline">Home</a></li>
-            <li><a href="#projects" class="hover:underline">Personal Projects</a></li>
-            <li><a href="#experience" class="hover:underline">Experience</a></li>
-            <li><a href="#interests" class="hover:underline">Interests</a></li>
+            <li><a href="#hero" class="hover:underline font-bold text-highlight">Home</a></li>
+            <li><a href="#projects" class="hover:underline font-bold text-highlight">Personal Projects</a></li>
+            <li><a href="#experience" class="hover:underline font-bold text-highlight">Experience</a></li>
+            <li><a href="#interests" class="hover:underline font-bold text-highlight ">Interests</a></li>
         </ul>
     </nav>
 </header>
 
 <main class="container mx-auto p-4">
-    <section id="hero" class="min-h-screen flex items-center justify-center">
+    <section id="hero" class="min-h-screen flex bg-background items-center justify-center">
         <div class="text-center">
-            <h2 class="text-4xl font-bold mb-4 font-mono">Hey, I'm Jordan Thurston</h2>
-            <p class="text-xl mb-6 job-title-typing"></p>
-            <p class=" font-mono ">As a 25-year-old Software Engineer, I've spearheaded multiple SBIR contract projects and showcased them at renowned conventions. My adaptability and wide-ranging technical skills drive successful outcomes in fast-paced, Agile environments. </p>
-            <a href="#projects" class="bg-blue-500 text-white px-6 py-3 rounded-full shadow-md hover:bg-blue-600">View My Work</a>
-            <button id="toggleAboutMe" class="bg-blue-500 text-white px-6 py-3 mt-4 rounded-full shadow-md hover:bg-blue-600">Read more</button>
-            <p id="aboutMeText" class="text-md mt-6 text-gray-700 font-mono hidden">I am a 25 year old highly dynamic Software Engineer specializing in Agile development and cutting-edge SBIR projects. 
+            <h2 class="text-4xl font-bold mb-4 font-mono text-primary">Hey, I'm Jordan Thurston</h2>
+            <p class="text-xl mb-6  job-title-typing"></p>
+            <p class=" font-mono text-secondary">As a 25-year-old Software Engineer, I've spearheaded multiple SBIR contract projects and showcased them at renowned conventions. My adaptability and wide-ranging technical skills drive successful outcomes in fast-paced, Agile environments. </p>
+            <a href="#projects" class="bg-highlight hover:bg-accent text-primary px-6 py-3 rounded-full shadow-md">View My Work</a>
+            <button id="toggleAboutMe" class="bg-highlight hover:bg-accent text-primary px-6 py-3 mt-4 rounded-full shadow-md">Read more</button>
+            <p id="aboutMeText" class="text-md mt-6 text-gray-700 font-mono hidden text-secondary">I am a  highly dynamic Software Engineer specializing in Agile development practices and achieving goals towards cutting-edge SBIR projects. 
                 My work focuses on developing innovative solutions for Learning Content Creation for LMS, with advanced tracking via xAPI and LRS storage. 
-                I lead the charge in integrating open-source and up-to-date technologies, recently pioneering the use of locally hosted AI frameworks to generate content,
+                I've spearheaded integrating open-source and up-to-date technologies into our existing product line, recently pioneering the use of locally hosted AI frameworks to generate content,
                  successfully capturing SBIR objectives. Known for my flexibility, adaptability, and composure under pressure, I thrive in dynamic environments, and 
                 my ability to take criticism well, coupled with a great sense of humor, makes me a valuable team player.</p>
         </div>
     </section>
 
-    <section id="projects" class="my-16">
+    <section id="projects" class="my-16 min-h-screen bg-background">
         <h2 class="text-3xl font-bold text-center mb-8">Projects</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Project 1 -->
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-2xl font-bold mb-4">NBA Matchup Analysis</h3>
-                <p class="text-gray-700 mb-4">Flask App utilizing multiple APIs/Web Data to allow user to use NBA statistical data and matchup data, then display textual and visual analytics for NBA Matchups.</p>
-                <a href="#" class="text-blue-500 hover:underline">Learn more</a>
+            <div class="bg-primary p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold text-highlight mb-4">NBA Matchup Analysis</h3>
+                <p class="text-background mb-4">Flask App utilizing multiple APIs/Web Data to allow user to use NBA statistical data and matchup data, then display textual and visual analytics for NBA Matchups.</p>
+                <div class="border shadow-lg p-4 rounded-lg bg-background">
+                    <p class=" text-primary" >Technical Stack Used</p>
+                    <ul class=" text-secondary  mb-2 mx-4 list-disc">
+                        <li>Django</li>
+                        <li>Python</li>
+                        <li>HTML/JS/CSS</li>
+                        <li>API(s): IMDB</li>
+                    </ul>
+                </div>
+                <a href="#" class="text-accent hover:underline">Learn more</a>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-2xl font-bold mb-4">NetLists</h3>
-                <p class="text-gray-700 mb-4">Django App using IMDB API to allow users to create Lists/Collections of Media and rate/review them. Sign in accounts.</p>
-                <a href="#" class="text-blue-500 hover:underline">Learn more</a>
+            <div class="bg-primary p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl text-highlight font-bold mb-4">NetLists</h3>
+                <p class=" text-background mb-4">Django App using IMDB API to allow users to create Lists/Collections of Media and rate/review them. Sign in accounts.</p>
+                <div class="border shadow-lg p-4 rounded-lg bg-background">
+                    <p class=" text-primary" >Technical Stack Used</p>
+                    <ul class=" text-secondary  mb-2 mx-4 list-disc">
+                        <li>Django</li>
+                        <li>Python</li>
+                        <li>HTML/JS/CSS</li>
+                        <li>API(s): IMDB</li>
+                    </ul>
+                </div>
+                <a href="#" class="text-accent hover:underline">Learn more</a>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-2xl font-bold mb-4">Custom Sticker Art</h3>
-                <p class="text-gray-700 mb-4">Shop to utilize skill in art based Software and Generative AI to Sell Custom Ordered Art as Stickers</p>
-                <a href="#" class="text-blue-500 hover:underline">Learn more</a>
+            <div class="bg-primary p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold text-highlight  mb-4">Custom Sticker Art</h3>
+                <p class=" text-background mb-4">Shop to utilize skill in art based Software and Generative AI to Sell Custom Ordered Art as Stickers</p>
+                <div class="border shadow-lg p-4 rounded-lg bg-background">
+                    <p class=" text-primary" >Technical Stack Used</p>
+                    <ul class=" text-secondary  mb-2 mx-4 list-disc">
+                        <li>Django</li>
+                        <li>Python</li>
+                        <li>HTML/JS/CSS</li>
+                        <li>API(s): IMDB</li>
+                    </ul>
+                </div>
+
+                <a href="#" class=" text-accent hover:underline">Learn more</a>
             </div>
             <!-- Add more projects as needed -->
         </div>
@@ -63,27 +109,33 @@
         <h2 class="text-3xl font-bold text-center mb-8">Experience</h2>
         <div class="space-y-8">
             <!-- Experience 1 -->
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-2xl font-bold mb-2">Software Engineer</h3>
-                <h4 class="text-xl text-gray-700 mb-2">Qualtech Systems Inc <span class="text-gray-500 text-sm">Sept 2022- Present.</span></h4> 
-                <p class="text-gray-700">Software Engineer utilizing Agile based practices on a 2 week sprint cycle for a small company.
-                    Due to the size of the Company I have been able to take on additional responsibilities beyond a normal level 1 SE. 
-                    Such as:
+            <div class="bg-primary p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl text-highlight font-bold mb-2">Software Engineer</h3>
+                <h4 class="text-xl text-accent mb-2">Qualtech Systems Inc <span class="text-black text-sm font-bold">Sept 2022- Present.</span></h4> 
+                <p class="text-highlight font-bold text-md mb-2">Software Engineer utilizing Agile based practices on a 2 week sprint cycle for a team of less than thirty. 
+                    Completing tasks based on achieving goals for SBIR listed projects. Working on multiple projects and multiple repositories managed by Git. 
+                    Have experience with Testing/Building/Code Review/QA Demos for productholders.                    
+
                 </p>
-                <ul class='list-disc'>
-                    <li>Attending multiple conferences/conventions such as I I/TSEC 2023 to present/demo product to </li>
-                    <li>Building Projects/Enviornments/Installations for Multiple Distributions.</li>
-                    <li>Achieving critical goals by strict deadlines for multiple SBIR Projects in Phase 2 and beyond</li>
-                    <li>Manage and Task an intern on a SBIR based project.</li>
-                </ul>
+                <div class="border rounded-lg p-4 bg-background shadow-lg">     
+                    <p class="text-secondary mb-2 text-md">Due to the size of the Company I have been able to take on additional responsibilities beyond a normal level 1 SE. 
+                        Such as:</p>           
+                    <ul class='list-disc text-primary text-md mx-4'>
+                        <li>Attending multiple conferences/conventions such as I I/TSEC 2023 to present/demo product to </li>
+                        <li>Building Projects/Enviornments/Installations for Multiple Distributions.</li>
+                        <li>Achieving critical goals by strict deadlines for <strong>multiple </strong>SBIR Projects in Phase 2 and beyond <a class="text-secondary hover:text-primary" href="https://www.sbir.gov/sbc/qualtech-systems-inc-0"> LINK</a></li>
+                        <li>Managed and tasked an intern during summer 2024 to achieve a project based goal for utilizing local LLMs and Local RAG implementations.</li>
+                     </ul>
+                </div>
+
             </div>
             <!-- Add more experiences as needed -->
             <div class="space-y-8">
                 <!-- Experience 1 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold mb-2">Director</h3>
-                    <h4 class="text-xl text-gray-700 mb-2">Town of Vernon Parks & Recreation <span class="text-gray-500 text-sm">Jan 2016 - June 2022.</span></h4> 
-                    <p class="text-gray-700">
+                <div class="bg-primary p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl text-highlight font-bold mb-2">Director</h3>
+                    <h4 class="text-xl text-accent mb-2">Town of Vernon Parks & Recreation <span class="text-black font-bold text-sm">Jan 2016 - June 2022.</span></h4> 
+                    <p class="text-highlight font-bold text-md mb-2">
                         As a Summer Camp Director, I successfully led a vibrant camp of 80 kids and a dedicated team of 10 staff members,
                          as well as managed an afterschool program with 40 children and 6 staff during the school year. My role involved
                           meticulous management and daily scheduling for the staff, ensuring smooth and efficient operations. I excelled
@@ -93,6 +145,17 @@
                               updates on their child's activities and progress. My continued leadership and commitment over the years have
                                fostered a positive and enriching experience for both staff and campers.            
                     </p>
+
+                    <div class="border rounded-lg p-4 bg-background shadow-lg">     
+                        <p class="text-secondary mb-2 text-md">Due to the size of the Company I have been able to take on additional responsibilities beyond a normal level 1 SE. 
+                            Such as:</p>           
+                        <ul class='list-disc text-primary text-md mx-4'>
+                            <li>Attending multiple conferences/conventions such as I I/TSEC 2023 to present/demo product to </li>
+                            <li>Building Projects/Enviornments/Installations for Multiple Distributions.</li>
+                            <li>Achieving critical goals by strict deadlines for <strong>multiple </strong>SBIR Projects in Phase 2 and beyond</li>
+                            <li>Managed and tasked an intern during summer 2024 to achieve a project based goal for utilizing local LLMs and Local RAG implementations.</li>
+                         </ul>
+                    </div>
 
                 </div>
         </div>

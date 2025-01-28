@@ -1,0 +1,8 @@
+Model Information:
+* title:	tétard - tadpole
+* source:	https://sketchfab.com/3d-models/tetard-tadpole-f5908547c2264c598483d00bc0b67413
+* author:	cassiopee.chabot (https://sketchfab.com/cassiopee.chabot)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

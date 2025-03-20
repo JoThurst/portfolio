@@ -134,13 +134,13 @@
                     </a>
                 </div>
                 <div class="flex space-x-4 pt-4">
-                    <a href="https://github.com/yourusername" target="_blank" class="social-link">
+                    <a href="https://github.com/JoThurst" target="_blank" class="social-link">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-link">
+                    <a href="www.linkedin.com/in/jordan-thurston-5243b723a" target="_blank" class="social-link">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="mailto:your.email@example.com" class="social-link">
+                    <a href="mailto:jothurst@gmail.com" class="social-link">
                         <i class="fas fa-envelope"></i>
                     </a>
                 </div>
@@ -214,8 +214,29 @@
     </section>
 
     <main class="container mx-auto p-4">
-        <!-- Experience Section Moved Up -->
-        <section id="experience" class="my-16">
+        <!-- Experience Section -->
+        <section id="experience" class="my-16 relative overflow-hidden">
+            <!-- Background Lines for Experience -->
+            <div class="absolute inset-0 pointer-events-none opacity-10">
+                <svg class="w-full h-full" viewBox="0 0 1000 1000" preserveAspectRatio="none">
+                    <path class="wave-line" d="M0,100 Q250,0 500,100 T1000,100" fill="none" stroke="#3B82F6" stroke-width="1">
+                        <animate attributeName="d" 
+                            dur="18s" 
+                            repeatCount="indefinite" 
+                            values="M0,100 Q250,0 500,100 T1000,100;
+                                    M0,100 Q250,200 500,100 T1000,100;
+                                    M0,100 Q250,0 500,100 T1000,100"/>
+                    </path>
+                    <path class="wave-line" d="M0,300 Q250,200 500,300 T1000,300" fill="none" stroke="#3B82F6" stroke-width="1" opacity="0.5">
+                        <animate attributeName="d" 
+                            dur="22s" 
+                            repeatCount="indefinite" 
+                            values="M0,300 Q250,200 500,300 T1000,300;
+                                    M0,300 Q250,400 500,300 T1000,300;
+                                    M0,300 Q250,200 500,300 T1000,300"/>
+                    </path>
+                </svg>
+            </div>
             <h2 class="text-3xl font-bold text-center mb-8">Experience</h2>
             <div class="space-y-8">
 
@@ -418,147 +439,299 @@
             </div>
         </section>
 
-        <!-- Projects Section Moved Down -->
-        <section id="projects" class="my-16 bg-background">
-            <h2 class="text-3xl font-bold text-center text-primary mb-8">Personal Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="bg-gradient-to-t from-primary/80 via-secondary/30 to-primary p-8 rounded-2xl shadow-2xl">
-                  <div class="mb-6">
-                    <h3 class="text-2xl font-bold text-highlight mb-4">NBA Matchup Analysis</h3>
-                    <p class="text-background mb-4">Flask App utilizing multiple APIs/Web Data to allow user to use NBA statistical data and matchup data, then display textual and visual analytics for NBA Matchups.</p>
-                  </div>
-                        <!-- Technical Stack -->
-                        <div class="bg-background p-6 rounded-xl shadow-inner">
-                          <h5 class="text-lg text-foreground font-semibold mb-4">Technical Stack</h5>
-                          <ul class="list-disc pl-6 space-y-3">
-                            <li class="text-primary flex items-center">
-                              <span class="mr-2 text-accent">
-                                <!-- Python SVG -->
-                                <img src="static/icons/python.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                                                     
-                              </span>
-                              Python  
-                            </li>
-                            <li class="text-primary flex items-center">
-                              <span class="mr-2 text-accent">
-                                <img src="static/icons/flask.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                              </span>
+        <!-- Projects Section -->
+        <section id="projects" class="my-16 bg-background relative overflow-hidden">
+            <!-- Background Lines for Projects -->
+            <div class="absolute inset-0 pointer-events-none opacity-10">
+                <svg class="w-full h-full" viewBox="0 0 1000 1000" preserveAspectRatio="none">
+                    <path class="wave-line" d="M1000,100 Q750,0 500,100 T0,100" fill="none" stroke="#3B82F6" stroke-width="1">
+                        <animate attributeName="d" 
+                            dur="20s" 
+                            repeatCount="indefinite" 
+                            values="M1000,100 Q750,0 500,100 T0,100;
+                                    M1000,100 Q750,200 500,100 T0,100;
+                                    M1000,100 Q750,0 500,100 T0,100"/>
+                    </path>
+                    <path class="wave-line" d="M1000,300 Q750,200 500,300 T0,300" fill="none" stroke="#3B82F6" stroke-width="1" opacity="0.5">
+                        <animate attributeName="d" 
+                            dur="25s" 
+                            repeatCount="indefinite" 
+                            values="M1000,300 Q750,200 500,300 T0,300;
+                                    M1000,300 Q750,400 500,300 T0,300;
+                                    M1000,300 Q750,200 500,300 T0,300"/>
+                    </path>
+                </svg>
+            </div>
+            <h2 class="text-3xl font-bold text-center text-highlight mb-12">Personal Projects</h2>
+            <div class="space-y-12"> <!-- Changed from grid to vertical stack -->
+                <!-- NBA Matchup Analysis Project -->
+                <div class="bg-gradient-to-r from-primary via-secondary/30 to-primary p-8 rounded-2xl shadow-2xl">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Left Column: Project Info -->
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-3xl font-bold text-highlight mb-4">Yuno Ball</h3>
+                                <div class="flex items-center space-x-4 mb-4">
+                                    <span class="px-3 py-1 rounded-full bg-accent/20 text-highlight text-sm">Full Stack</span>
+                                    <span class="px-3 py-1 rounded-full bg-accent/20 text-highlight text-sm">Database Storage</span>
+                                    <span class="px-3 py-1 rounded-full bg-accent/20 text-highlight text-sm">NBA API Integration</span>
+                                    <span class="px-3 py-1 rounded-full bg-accent/20 text-highlight text-sm">Web App</span>
+                                </div>
+                                <p class="text-highlight text-lg leading-relaxed">
+                                    Flask App utilizing the NBA API ingest data and provide comprehensive NBA statistical data and matchup analysis. Features interactive dashboards and visual analytics for in-depth game insights.
+                                    Account creation and authentication with Flask-Login. Deployed on AWS EC2.
+                                </p>
+                            </div>
 
-                                Flask
-                            </li>
-                            <li class="text-primary flex items-center">
-                              <span class="mr-2 text-accent">
-                                <img src="static/icons/html.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                              </span>
-                              HTML/JS/CSS
+                            <!-- Key Features -->
+                            <div class="bg-white/10 backdrop-blur p-6 rounded-xl">
+                                <h4 class="text-xl text-highlight font-semibold mb-4">Key Features</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center text-highlight/90">
+                                        <svg class="w-5 h-5 mr-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                        Real-time game statistics and analytics
+                                    </li>
+                                    <li class="flex items-center text-highlight/90">
+                                        <svg class="w-5 h-5 mr-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                        Interactive data visualization dashboards
+                                    </li>
+                                    <li class="flex items-center text-highlight/90">
+                                        <svg class="w-5 h-5 mr-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                        Advanced matchup prediction algorithms
+                                    </li>                                    <li class="flex items-center text-highlight/90">
+                                        <svg class="w-5 h-5 mr-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                        Current NBA player and team statistics
+                                    </li>
+                                </ul>
+                            </div>
 
-                            </li>
-                            <li class="text-primary flex items-center">
-                              <span class="mr-2 text-accent">
-                                <img src="static/icons/web.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                              </span>
-                              Web Scraping
-                            </li>
-                            <li class="text-primary flex items-center">
-                              <span class="mr-2 text-accent">
-                                <img src="static/icons/pandas.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                              </span>
-                              Pandas For Data handling
-                            </li>
-                          </ul>
+                            <!-- Technical Stack -->
+                            <div class="bg-white/10 backdrop-blur p-6 rounded-xl">
+                                <h4 class="text-xl text-highlight font-semibold mb-4">Technical Stack</h4>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <!-- Backend -->
+                                    <div>
+                                        <h5 class="text-accent font-medium mb-2">Backend</h5>
+                                        <ul class="space-y-2">
+                                            <li class="flex items-center text-highlight/90">
+                                                <img src="static/icons/python.svg" alt="Python" class="w-5 h-5 mr-2">
+                                                Python
+                                            </li>
+                                            <li class="flex items-center text-highlight/90">
+                                                <img src="static/icons/flask.svg" alt="Flask" class="w-5 h-5 mr-2">
+                                                Flask
+                                            </li>
+                                            <li class="flex items-center text-highlight/90">
+                                                <img src="static/icons/pandas.svg" alt="Pandas" class="w-5 h-5 mr-2">
+                                                Pandas
+                                            </li>
+                                            <li class="flex items-center text-highlight/90">
+                                                <i class="fa-solid fa-database w-5 h-5 mr-2"></i>
+                                                PostgreSQL
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- Frontend -->
+                                    <div>
+                                        <h5 class="text-accent font-medium mb-2">Frontend</h5>
+                                        <ul class="space-y-2">
+                                            <li class="flex items-center text-highlight/90">
+                                                <img src="static/icons/html.svg" alt="HTML" class="w-5 h-5 mr-2">
+                                                HTML/CSS
+                                            </li>
+                                            <li class="flex items-center text-highlight/90">
+                                                <i class="fab fa-js text-yellow-400 w-5 h-5 mr-2"></i>
+                                                JavaScript
+                                            </li>
+                                            <li class="flex items-center text-highlight/90">
+                                                <i class="fas fa-chart-line text-blue-400 w-5 h-5 mr-2"></i>
+                                                Tailwind CSS
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Links -->
+                            <div class="flex space-x-4">
+                                <a href="https://yunoball.xyz" class="btn-primary">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    Live Site
+                                </a>
+                                <a href="https://github.com/JoThurst/yuno-ball" class="btn-secondary">
+                                    <i class="fab fa-github mr-2"></i>
+                                    Source Code
+                                </a>
+                            </div>
                         </div>
-                    <a href="#" class="text-accent hover:underline">Learn more</a>
-                </div>
-                <div class="bg-gradient-to-t from-primary/80 via-secondary/30 to-primary p-8 rounded-2xl shadow-2xl">
-                  <div class="mb-6">
-                    <h3 class="text-3xl text-highlight font-extrabold mb-2">NetLists</h3>
-                    <p class=" text-highlight font-medium text-md">Django App using IMDB API to allow users to create Lists/Collections of Media and rate/review them. Sign in accounts.</p>
-                  </div>
-                        <!-- Technical Stack -->
-                        <div class="bg-background p-6 rounded-xl shadow-inner">
-                          <h5 class="text-lg text-foreground font-semibold mb-4">Technical Stack</h5>
-                          <ul class="list-disc pl-6 space-y-3">
-                            <li class="text-primary flex items-center">
-                              <span class="mr-2 text-accent">
-                                <!-- Python SVG -->
-                                <img src="static/icons/python.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                                                     
-                              </span>
-                              Python  
-                            </li>
-                            <li class="text-primary flex items-center">
-                              <span class="mr-2 text-accent">
-                                <img src="static/icons/django.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                              </span>
 
-                                Django
-                            </li>
-                            <li class="text-primary flex items-center">
-                              <span class="mr-2 text-accent">
-                                <img src="static/icons/tailwindcss.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                              </span>
-                              Tailwind CSS
-
-                            </li>
-                            <li class="text-primary flex items-center">
-                              <span class="mr-2 text-accent">
-                                <img src="static/icons/tailwindcss.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                              </span>
-                              X
-                            </li>
-                          </ul>
+                        <!-- Right Column: Screenshots -->
+                        <div class="space-y-6">
+                            <!-- Main Screenshot -->
+                            <div class="bg-white/10 backdrop-blur rounded-xl overflow-hidden">
+                                <img src="/static/images/projects/dashboard1.png" alt="NBA Matchup Analysis Dashboard" class="w-full h-auto">
+                            </div>
+                            <!-- Screenshot Gallery -->
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-white/10 backdrop-blur rounded-lg overflow-hidden">
+                                    <img src="/static/images/projects/dashboard3.png" alt="Statistics View" class="w-full h-auto">
+                                </div>
+                                <div class="bg-white/10 backdrop-blur rounded-lg overflow-hidden">
+                                    <img src="/static/images/projects/dashboard4.png" alt="Predictions View" class="w-full h-auto">
+                                </div>
+                            </div>
                         </div>
-                    <a href="#" class="text-accent hover:underline">Learn more</a>
+                    </div>
                 </div>
-                <!-- Art Project -->
-                <div class="bg-gradient-to-t from-primary/80 via-secondary/30 to-primary p-8 rounded-2xl shadow-2xl">
-                  <div class="mb-6">
-                      <h3 class="text-3xl text-highlight font-extrabold mb-2">Custom Sticker Art</h3>
-                      <p class=" text-highlight font-medium text-md">Shop to utilize skill in art based Software and Generative AI to Sell Custom Ordered Art as Stickers</p>
-                  </div>  
-                        <!-- Technical Stack -->
-                        <div class="bg-background p-6 rounded-xl shadow-inner">
-                          <h5 class="text-lg text-foreground font-semibold mb-4">Technical Stack</h5>
-                          <ul class="list-disc pl-6 space-y-3">
-                            <li class="text-primary flex items-center">
-                              <span class="mr-2 text-accent">
-                                <!-- Python SVG -->
-                                <img src="static/icons/python.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                                                     
-                              </span>
-                              Python  
-                            </li>
-                            <li class="text-primary flex items-center">
-                              <span class="mr-2 text-accent">
-                                <img src="static/icons/django.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                              </span>
 
-                                Django
-                            </li>
-                            <li class="text-primary flex items-center">
-                              <span class="mr-2 text-accent">
-                                <img src="static/icons/tailwindcss.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                              </span>
-                              Tailwind CSS
+                <!-- NetLists Project -->
+                <div class="bg-gradient-to-r from-primary via-secondary/30 to-primary p-8 rounded-2xl shadow-2xl">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Left Column: Project Info -->
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-3xl font-bold text-highlight mb-4">NetLists</h3>
+                                <div class="flex items-center space-x-4 mb-4">
+                                    <span class="px-3 py-1 rounded-full bg-accent/20 text-highlight text-sm">Full Stack</span>
+                                    <span class="px-3 py-1 rounded-full bg-accent/20 text-highlight text-sm">Web App</span>
+                                </div>
+                                <p class="text-highlight text-lg leading-relaxed">
+                                    A Django-powered web application that allows users to create and manage personalized media collections. Features user authentication, IMDB API integration, and social sharing capabilities.
+                                </p>
+                            </div>
 
-                            </li>
-                            <li class="text-primary flex items-center">
-                              <span class="mr-2 text-accent">
-                                <img src="static/icons/tailwindcss.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                              </span>
-                              X
-                            </li>
-                          </ul>
+                            <!-- Key Features -->
+                            <div class="bg-white/10 backdrop-blur p-6 rounded-xl">
+                                <h4 class="text-xl text-highlight font-semibold mb-4">Key Features</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center text-highlight/90">
+                                        <svg class="w-5 h-5 mr-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                        User authentication and profiles
+                                    </li>
+                                    <li class="flex items-center text-highlight/90">
+                                        <svg class="w-5 h-5 mr-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                        IMDB API integration
+                                    </li>
+                                    <li class="flex items-center text-highlight/90">
+                                        <svg class="w-5 h-5 mr-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                        Social sharing and recommendations
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Technical Stack -->
+                            <div class="bg-white/10 backdrop-blur p-6 rounded-xl">
+                                <h4 class="text-xl text-highlight font-semibold mb-4">Technical Stack</h4>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <!-- Backend -->
+                                    <div>
+                                        <h5 class="text-accent font-medium mb-2">Backend</h5>
+                                        <ul class="space-y-2">
+                                            <li class="flex items-center text-highlight/90">
+                                                <img src="static/icons/python.svg" alt="Python" class="w-5 h-5 mr-2">
+                                                Python
+                                            </li>
+                                            <li class="flex items-center text-highlight/90">
+                                                <img src="static/icons/django.svg" alt="Django" class="w-5 h-5 mr-2">
+                                                Django
+                                            </li>
+                                            <li class="flex items-center text-highlight/90">
+                                                <i class="fas fa-database text-green-400 w-5 h-5 mr-2"></i>
+                                                PostgreSQL
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- Frontend -->
+                                    <div>
+                                        <h5 class="text-accent font-medium mb-2">Frontend</h5>
+                                        <ul class="space-y-2">
+                                            <li class="flex items-center text-highlight/90">
+                                                <img src="static/icons/tailwindcss.svg" alt="Tailwind" class="w-5 h-5 mr-2">
+                                                Tailwind CSS
+                                            </li>
+                                            <li class="flex items-center text-highlight/90">
+                                                <i class="fab fa-js text-yellow-400 w-5 h-5 mr-2"></i>
+                                                JavaScript
+                                            </li>
+                                            <li class="flex items-center text-highlight/90">
+                                                <i class="fas fa-film text-red-400 w-5 h-5 mr-2"></i>
+                                                IMDB API
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Links -->
+                            <div class="flex space-x-4">
+                                <a href="#" class="btn-primary">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    Live Demo
+                                </a>
+                                <a href="https://github.com/JoThurst/netlists" class="btn-secondary">
+                                    <i class="fab fa-github mr-2"></i>
+                                    Source Code
+                                </a>
+                            </div>
                         </div>
 
-                    <a href="#" class=" text-highlight hover:text-white hover:underline">Learn more</a>
+                        <!-- Right Column: Screenshots -->
+                        <div class="space-y-6">
+                            <!-- Main Screenshot -->
+                            <div class="bg-white/10 backdrop-blur rounded-xl overflow-hidden">
+                                <img src="/static/images/projects/netlists/main.png" alt="NetLists Dashboard" class="w-full h-auto">
+                            </div>
+                            <!-- Screenshot Gallery -->
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-white/10 backdrop-blur rounded-lg overflow-hidden">
+                                    <img src="/static/images/projects/netlists/lists.png" alt="Lists View" class="w-full h-auto">
+                                </div>
+                                <div class="bg-white/10 backdrop-blur rounded-lg overflow-hidden">
+                                    <img src="/static/images/projects/netlists/details.png" alt="Details View" class="w-full h-auto">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Add more projects as needed -->
             </div>
         </section>
 
-        <section id="interests" class="my-16 space-y-6">
+        <section id="interests" class="my-16 space-y-6 relative overflow-hidden">
+            <!-- Background Lines for Interests -->
+            <div class="absolute inset-0 pointer-events-none opacity-10">
+                <svg class="w-full h-full" viewBox="0 0 1000 1000" preserveAspectRatio="none">
+                    <path class="wave-line" d="M0,200 Q250,100 500,200 T1000,200" fill="none" stroke="#3B82F6" stroke-width="1">
+                        <animate attributeName="d" 
+                            dur="23s" 
+                            repeatCount="indefinite" 
+                            values="M0,200 Q250,100 500,200 T1000,200;
+                                    M0,200 Q250,300 500,200 T1000,200;
+                                    M0,200 Q250,100 500,200 T1000,200"/>
+                    </path>
+                    <path class="wave-line" d="M0,400 Q250,300 500,400 T1000,400" fill="none" stroke="#3B82F6" stroke-width="1" opacity="0.5">
+                        <animate attributeName="d" 
+                            dur="28s" 
+                            repeatCount="indefinite" 
+                            values="M0,400 Q250,300 500,400 T1000,400;
+                                    M0,400 Q250,500 500,400 T1000,400;
+                                    M0,400 Q250,300 500,400 T1000,400"/>
+                    </path>
+                </svg>
+            </div>
             <h2 class="text-3xl font-bold text-center text-highlight mb-8">Interests</h2>
             
             <!-- Sports Interest with Enhanced Design -->
@@ -711,6 +884,9 @@
                 I have taken multiple art classes in university, as well as read books and taken various courses in my free time in various digital mediums as a hobby. Please enjoy some art I've made over that time and I hope it inspires anyone who sees this to 
                 embrace that creative nature that lies in all of us.
               </p>
+              <p class="text-highlight mb-4">
+                Two of these AI images are generated from the images in the gallery above. Can you guess which ones?
+              </p>
               <div class="relative">
                   <!-- Art Gallery Carousel -->
                   <div class="overflow-hidden relative rounded-lg">
@@ -743,6 +919,121 @@
             </div>
         </section>
     </main>
+
+    <!-- Contact Section -->
+    <section id="contact" class="my-16 relative overflow-hidden">
+        <!-- Background Lines for Contact -->
+        <div class="absolute inset-0 pointer-events-none opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 1000 1000" preserveAspectRatio="none">
+                <path class="wave-line" d="M0,300 Q250,200 500,300 T1000,300" fill="none" stroke="#3B82F6" stroke-width="1">
+                    <animate attributeName="d" 
+                        dur="30s" 
+                        repeatCount="indefinite" 
+                        values="M0,300 Q250,200 500,300 T1000,300;
+                                M0,300 Q250,400 500,300 T1000,300;
+                                M0,300 Q250,200 500,300 T1000,300"/>
+                </path>
+                <path class="wave-line" d="M0,500 Q250,400 500,500 T1000,500" fill="none" stroke="#3B82F6" stroke-width="1" opacity="0.5">
+                    <animate attributeName="d" 
+                        dur="35s" 
+                        repeatCount="indefinite" 
+                        values="M0,500 Q250,400 500,500 T1000,500;
+                                M0,500 Q250,600 500,500 T1000,500;
+                                M0,500 Q250,400 500,500 T1000,500"/>
+                </path>
+            </svg>
+        </div>
+
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-highlight mb-8">Get In Touch</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div class="bg-gradient-to-r from-primary via-secondary/30 to-primary p-8 rounded-2xl shadow-2xl">
+                        <h3 class="text-2xl font-bold text-highlight mb-6">Let's Connect</h3>
+                        <p class="text-highlight/90 mb-8">
+                            Whether you want to discuss a work opportunity, current projects, talk about sports analytics, or just say hello, I'd love to hear from you. Feel free to reach out through any of these channels:
+                        </p>
+                        
+                        <!-- Contact Methods -->
+                        <div class="space-y-6">
+                            <!-- Email -->
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-accent/20 p-3 rounded-lg">
+                                    <i class="fas fa-envelope text-accent text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-highlight font-medium">Email</h4>
+                                    <a href="mailto:jothurst@gmail.com" class="text-accent hover:text-accent/80 transition">jothurst@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <!-- LinkedIn -->
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-accent/20 p-3 rounded-lg">
+                                    <i class="fab fa-linkedin text-accent text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-highlight font-medium">LinkedIn</h4>
+                                    <a href="www.linkedin.com/in/jordan-thurston-5243b723a" target="_blank" class="text-accent hover:text-accent/80 transition">Jordan Thurston</a>
+                                </div>
+                            </div>
+                            
+                            <!-- GitHub -->
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-accent/20 p-3 rounded-lg">
+                                    <i class="fab fa-github text-accent text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-highlight font-medium">GitHub</h4>
+                                    <a href="https://github.com/JoThurst" target="_blank" class="text-accent hover:text-accent/80 transition">@JoThurst</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-gradient-to-r from-primary via-secondary/30 to-primary p-8 rounded-2xl shadow-2xl">
+                    <h3 class="text-2xl font-bold text-highlight mb-6">Send a Message</h3>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-highlight font-medium mb-2">Name</label>
+                            <input type="text" id="name" name="name" required
+                                class="w-full px-4 py-2 bg-white/10 border border-secondary/20 rounded-lg focus:outline-none focus:border-accent text-highlight placeholder-secondary/50"
+                                placeholder="Your name">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-highlight font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-2 bg-white/10 border border-secondary/20 rounded-lg focus:outline-none focus:border-accent text-highlight placeholder-secondary/50"
+                                placeholder="your.email@example.com">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-highlight font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" required
+                                class="w-full px-4 py-2 bg-white/10 border border-secondary/20 rounded-lg focus:outline-none focus:border-accent text-highlight placeholder-secondary/50"
+                                placeholder="What's this about?">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-highlight font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" required
+                                class="w-full px-4 py-2 bg-white/10 border border-secondary/20 rounded-lg focus:outline-none focus:border-accent text-highlight placeholder-secondary/50 resize-none"
+                                placeholder="Your message here..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary w-full">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer class="bg-white shadow p-4 text-center">
         <p class="text-gray-700">&copy; 2024 Jordan Thurston. All rights reserved.</p>

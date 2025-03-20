@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Typing effect
     const typingElement = document.querySelector('.typing-text');
     if (typingElement) {
-        const words = ['Full Stack Development', 'SBIR Projects', 'Agile Development', 'AI Integration'];
+        const words = ['Full Stack Development', 'SBIR Projects', 'Agile Development', 'AI Integration', 'Installation & Maintenance', 'Data Analysis', 'Quality Assurance'];
         let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -188,4 +188,70 @@ document.addEventListener('DOMContentLoaded', () => {
         section.classList.add('opacity-0');
         observer.observe(section);
     });
+
+    // Contact Form Handling
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                subject: formData.get('subject'),
+                message: formData.get('message')
+            };
+
+            // Disable submit button and show loading state
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.innerHTML;
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+
+            try {
+                // Here you would typically send the data to your backend
+                // For now, we'll just simulate a successful submission
+                await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate network request
+
+                // Show success message
+                showNotification('Message sent successfully!', 'success');
+                contactForm.reset();
+            } catch (error) {
+                // Show error message
+                showNotification('Failed to send message. Please try again.', 'error');
+            } finally {
+                // Re-enable submit button
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonText;
+            }
+        });
+    }
 });
+
+// Notification System
+function showNotification(message, type = 'success') {
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `fixed bottom-4 right-4 px-6 py-3 rounded-lg shadow-lg transform transition-all duration-500 translate-y-full ${
+        type === 'success' ? 'bg-green-500' : 'bg-red-500'
+    } text-white`;
+    notification.textContent = message;
+
+    // Add to document
+    document.body.appendChild(notification);
+
+    // Animate in
+    setTimeout(() => {
+        notification.style.transform = 'translateY(0)';
+    }, 10);
+
+    // Remove after 3 seconds
+    setTimeout(() => {
+        notification.style.transform = 'translateY(full)';
+        setTimeout(() => {
+            document.body.removeChild(notification);
+        }, 500);
+    }, 3000);
+}

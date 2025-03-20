@@ -1,3 +1,143 @@
+/* Base styles */
+@layer base {
+    body {
+        @apply antialiased;
+    }
+}
+
+/* Wave Lines */
+.wave-line {
+    filter: blur(1px);
+    transform-origin: center;
+    will-change: d;
+}
+
+/* Navigation */
+.nav-link {
+    @apply text-muted hover:text-highlight transition-colors duration-200 text-sm font-medium;
+}
+
+.mobile-nav-link {
+    @apply block px-3 py-2 text-base font-medium text-muted hover:text-highlight hover:bg-secondary/10 rounded-lg transition-colors duration-200;
+}
+
+/* Buttons */
+.btn-primary {
+    @apply inline-flex items-center px-6 py-3 rounded-lg bg-accent text-white font-semibold hover:bg-accent/90 transition-colors duration-200 shadow-lg shadow-accent/25;
+}
+
+.btn-secondary {
+    @apply inline-flex items-center px-6 py-3 rounded-lg bg-secondary/10 text-highlight font-semibold hover:bg-secondary/20 transition-colors duration-200;
+}
+
+/* Social Links */
+.social-link {
+    @apply text-muted hover:text-accent transition-colors duration-200 text-xl;
+}
+
+/* Animations */
+.typing-text::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Art Carousel */
+#art-carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+#art-carousel img {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+#thumbnail-strip {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) transparent;
+}
+
+#thumbnail-strip::-webkit-scrollbar {
+    height: 6px;
+}
+
+#thumbnail-strip::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#thumbnail-strip::-webkit-scrollbar-thumb {
+    background-color: var(--accent);
+    border-radius: 6px;
+}
+
+/* Cards */
+.project-card {
+    @apply bg-secondary/5 rounded-xl p-6 hover:bg-secondary/10 transition-colors duration-200;
+}
+
+/* Gradients */
+.gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-success;
+}
+
+/* Scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-primary;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-secondary/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-secondary;
+}
+
+/* Glass effect */
+.glass {
+    @apply bg-white/10 backdrop-blur-lg;
+}
+
+/* Section spacing */
+section {
+    @apply py-20;
+}
+
+/* Container max-width */
+.container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Skills badges */
+.skill-badge {
+    @apply px-3 py-1 rounded-full text-sm font-medium bg-accent/10 text-accent;
+}
+
+/* Experience timeline */
+.timeline-item {
+    @apply relative pl-8 pb-8 border-l border-secondary/20 last:border-0;
+}
+
+.timeline-item::before {
+    content: '';
+    @apply absolute left-[-5px] top-2 w-2.5 h-2.5 rounded-full bg-accent;
+}
+
 #container3D {
     /* position: absolute;
     top: 0;

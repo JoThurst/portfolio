@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <meta name="description" content="Jordan Thurston - Software Engineer Portfolio">
+    <meta name="keywords" content="software engineer, full stack developer, web development">
+    <title>Jordan Thurston | Software Engineer</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
@@ -12,514 +14,740 @@
           theme: {
             extend: {
               colors: {
-                primary: '#DAD7CD',
-                secondary: '#A3B18A',
-                accent: '#588157',
-                highlight: '#344E41',
-                background: '#3A5A40',
-                foreground: '#A3B18A'
-              }
+                primary: '#0F172A',    // Dark blue
+                secondary: '#64748B',  // Slate
+                accent: '#3B82F6',     // Bright blue
+                highlight: '#EFF6FF',  // Light blue
+                muted: '#CBD5E1',      // Light slate
+                success: '#22C55E'     // Green
+              },
+              animation: {
+                'fade-in': 'fadeIn 0.5s ease-in',
+                'slide-up': 'slideUp 0.5s ease-out',
+              },
+              keyframes: {
+                fadeIn: {
+                  '0%': { opacity: '0' },
+                  '100%': { opacity: '1' },
+                },
+                slideUp: {
+                  '0%': { transform: 'translateY(20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+              },
             }
           }
         }
-      </script>
-
-<link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
+    <!-- Add Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Add icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
-<body class="bg-background">
-
-<header class="bg-foreground shadow">
-    <nav class="container mx-auto p-4 flex justify-between items-center">
-        <h1 class="text-2xl font-bold text-highlight">JoThurst Dev</h1>
-        <ul class="flex space-x-4">
-            <li><a href="#hero" class="hover:underline font-bold text-highlight">Home</a></li>
-            <li><a href="#projects" class="hover:underline font-bold text-highlight">Personal Projects</a></li>
-            <li><a href="#experience" class="hover:underline font-bold text-highlight">Experience</a></li>
-            <li><a href="#interests" class="hover:underline font-bold text-highlight ">Interests</a></li>
-        </ul>
+<body class="bg-primary text-highlight font-['Inter']">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-primary/90 backdrop-blur-sm z-50 border-b border-secondary/10">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-highlight hover:text-accent transition-colors">
+                    <span class="text-accent">{</span>JT<span class="text-accent">}</span>
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#interests" class="nav-link">Interests</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <button class="md:hidden text-highlight hover:text-accent" id="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-primary/90 backdrop-blur-sm">
+                <a href="#about" class="mobile-nav-link">About</a>
+                <a href="#projects" class="mobile-nav-link">Projects</a>
+                <a href="#experience" class="mobile-nav-link">Experience</a>
+                <a href="#interests" class="mobile-nav-link">Interests</a>
+                <a href="#contact" class="mobile-nav-link">Contact</a>
+            </div>
+        </div>
     </nav>
-</header>
 
-<main class="container mx-auto p-4">
-
-    <section id="hero" class="min-h-screen bg-background items-center justify-center">
-        <div id="container3D" class="w-full h-[100px] overflow pointer-events-none z-10">
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center pt-16 px-4 relative overflow-hidden">
+        <!-- Animated Background Lines -->
+        <div class="absolute inset-0 pointer-events-none">
+            <svg class="w-full h-full opacity-20" viewBox="0 0 1000 1000" preserveAspectRatio="none">
+                <!-- Wave Lines -->
+                <path class="wave-line" d="M0,150 Q250,50 500,150 T1000,150" fill="none" stroke="#3B82F6" stroke-width="1">
+                    <animate attributeName="d" 
+                        dur="15s" 
+                        repeatCount="indefinite" 
+                        values="M0,150 Q250,50 500,150 T1000,150;
+                                M0,150 Q250,250 500,150 T1000,150;
+                                M0,150 Q250,50 500,150 T1000,150"/>
+                </path>
+                <path class="wave-line" d="M0,400 Q250,300 500,400 T1000,400" fill="none" stroke="#3B82F6" stroke-width="1" opacity="0.5">
+                    <animate attributeName="d" 
+                        dur="20s" 
+                        repeatCount="indefinite" 
+                        values="M0,400 Q250,300 500,400 T1000,400;
+                                M0,400 Q250,500 500,400 T1000,400;
+                                M0,400 Q250,300 500,400 T1000,400"/>
+                </path>
+                <path class="wave-line" d="M0,650 Q250,550 500,650 T1000,650" fill="none" stroke="#3B82F6" stroke-width="1" opacity="0.3">
+                    <animate attributeName="d" 
+                        dur="25s" 
+                        repeatCount="indefinite" 
+                        values="M0,650 Q250,550 500,650 T1000,650;
+                                M0,650 Q250,750 500,650 T1000,650;
+                                M0,650 Q250,550 500,650 T1000,650"/>
+                </path>
+            </svg>
+        </div>
+        <div class="container mx-auto grid md:grid-cols-2 gap-8 items-center relative z-10">
+            <div class="space-y-6 animate-fade-in">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                    <span class="text-highlight">Hey, I'm</span>
+                    <span class="text-accent block">Jordan Thurston</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-secondary font-light">
+                    Software Engineer specializing in <span class="text-accent typing-text"></span>
+                </p>
+                <p class="text-secondary max-w-lg">
+                    Driving innovation through code. Experienced in leading SBIR contract projects 
+                    and delivering successful outcomes in fast-paced, Agile environments.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#projects" 
+                       class="btn-primary">
+                        View My Work
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#contact" 
+                       class="btn-secondary">
+                        Get in Touch
+                    </a>
+                </div>
+                <div class="flex space-x-4 pt-4">
+                    <a href="https://github.com/yourusername" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:your.email@example.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hidden md:block relative animate-fade-in">
+                <div class="absolute inset-0 bg-accent/20 rounded-full filter blur-3xl"></div>
+                <div class="relative">
+                    <!-- Modern Abstract Design -->
+                    <div class="aspect-square w-64 h-64 relative">
+                        <!-- Animated background blur effect -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-accent/30 to-secondary/30 rounded-full filter blur-2xl animate-pulse"></div>
                         
-        </div>
-        <div class="text-center">
-            <h2 class="text-4xl font-bold mb-4 font-mono text-primary">Hey, I'm Jordan Thurston</h2>
-            <p class="text-xl mb-6  job-title-typing"></p>
-            <p class=" font-mono text-secondary">As a 25-year-old Software Engineer, I've spearheaded multiple SBIR contract projects and showcased them at renowned conventions. My adaptability and wide-ranging technical skills drive successful outcomes in fast-paced, Agile environments. </p>
-            <a href="#projects" class="bg-highlight hover:bg-accent text-primary px-6 py-3 rounded-full shadow-md">View My Work</a>
-            <button id="toggleAboutMe" class="bg-highlight hover:bg-accent text-primary px-6 py-3 mt-4 rounded-full shadow-md">Read more</button>
-            <p id="aboutMeText" class="text-md mt-6 text-gray-700 font-mono hidden text-secondary">I am a  highly dynamic Software Engineer specializing in Agile development practices and achieving goals towards cutting-edge SBIR projects. 
-                My work focuses on developing innovative solutions for Learning Content Creation for LMS, with advanced tracking via xAPI and LRS storage. 
-                I've spearheaded integrating open-source and up-to-date technologies into our existing product line, recently pioneering the use of locally hosted AI frameworks to generate content,
-                 successfully capturing SBIR objectives. Known for my flexibility, adaptability, and composure under pressure, I thrive in dynamic environments, and 
-                my ability to take criticism well, coupled with a great sense of humor, makes me a valuable team player.</p>
+                        <!-- SVG Abstract Design -->
+                        <svg class="relative w-full h-full" viewBox="0 0 200 200">
+                            <!-- Animated gradient definition -->
+                            <defs>
+                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1">
+                                        <animate attributeName="stop-color" values="#3B82F6;#64748B;#3B82F6" dur="4s" repeatCount="indefinite" />
+                                    </stop>
+                                    <stop offset="100%" style="stop-color:#64748B;stop-opacity:1">
+                                        <animate attributeName="stop-color" values="#64748B;#3B82F6;#64748B" dur="4s" repeatCount="indefinite" />
+                                    </stop>
+                                </linearGradient>
+                                <linearGradient id="grad2" x1="100%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#0F172A;stop-opacity:1">
+                                        <animate attributeName="stop-color" values="#0F172A;#3B82F6;#0F172A" dur="6s" repeatCount="indefinite" />
+                                    </stop>
+                                    <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1">
+                                        <animate attributeName="stop-color" values="#3B82F6;#0F172A;#3B82F6" dur="6s" repeatCount="indefinite" />
+                                    </stop>
+                                </linearGradient>
+                            </defs>
+                            
+                            <!-- Base circle -->
+                            <circle cx="100" cy="100" r="80" fill="url(#grad1)" opacity="0.9">
+                                <animate attributeName="r" values="80;85;80" dur="3s" repeatCount="indefinite" />
+                            </circle>
+                            
+                            <!-- Geometric shapes -->
+                            <path d="M100,60 L140,100 L100,140 L60,100 Z" fill="url(#grad2)" opacity="0.8">
+                                <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="20s" repeatCount="indefinite" />
+                            </path>
+                            
+                            <!-- Decorative circles -->
+                            <circle cx="100" cy="100" r="40" fill="none" stroke="url(#grad1)" stroke-width="2">
+                                <animate attributeName="r" values="40;45;40" dur="4s" repeatCount="indefinite" />
+                                <animate attributeName="stroke-width" values="2;3;2" dur="4s" repeatCount="indefinite" />
+                            </circle>
+                            
+                            <!-- Floating dots -->
+                            <g>
+                                <circle cx="100" cy="60" r="4" fill="#3B82F6">
+                                    <animate attributeName="cy" values="60;65;60" dur="2s" repeatCount="indefinite" />
+                                </circle>
+                                <circle cx="140" cy="100" r="4" fill="#3B82F6">
+                                    <animate attributeName="cx" values="140;145;140" dur="2s" repeatCount="indefinite" />
+                                </circle>
+                                <circle cx="100" cy="140" r="4" fill="#3B82F6">
+                                    <animate attributeName="cy" values="140;135;140" dur="2s" repeatCount="indefinite" />
+                                </circle>
+                                <circle cx="60" cy="100" r="4" fill="#3B82F6">
+                                    <animate attributeName="cx" values="60;55;60" dur="2s" repeatCount="indefinite" />
+                                </circle>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="projects" class="my-16 bg-background">
-        <h2 class="text-3xl font-bold text-center text-primary mb-8">Personal Projects</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Project 1 -->
-            <div class="bg-gradient-to-t from-secondary to-primary p-8 rounded-2xl shadow-2xl">
-              <div class="mb-6">
-                <h3 class="text-2xl font-bold text-highlight mb-4">NBA Matchup Analysis</h3>
-                <p class="text-background mb-4">Flask App utilizing multiple APIs/Web Data to allow user to use NBA statistical data and matchup data, then display textual and visual analytics for NBA Matchups.</p>
-              </div>
-                    <!-- Technical Stack -->
-                    <div class="bg-background p-6 rounded-xl shadow-inner">
-                      <h5 class="text-lg text-foreground font-semibold mb-4">Technical Stack</h5>
-                      <ul class="list-disc pl-6 space-y-3">
-                        <li class="text-primary flex items-center">
-                          <span class="mr-2 text-accent">
-                            <!-- Python SVG -->
-                            <img src="static/icons/python.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                                                     
-                          </span>
-                          Python  
-                        </li>
-                        <li class="text-primary flex items-center">
-                          <span class="mr-2 text-accent">
-                            <img src="static/icons/flask.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                          </span>
-
-                            Flask
-                        </li>
-                        <li class="text-primary flex items-center">
-                          <span class="mr-2 text-accent">
-                            <img src="static/icons/html.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                          </span>
-                          HTML/JS/CSS
-
-                        </li>
-                        <li class="text-primary flex items-center">
-                          <span class="mr-2 text-accent">
-                            <img src="static/icons/web.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                          </span>
-                          Web Scraping
-                        </li>
-                        <li class="text-primary flex items-center">
-                          <span class="mr-2 text-accent">
-                            <img src="static/icons/pandas.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                          </span>
-                          Pandas For Data handling
-                        </li>
-                      </ul>
-                    </div>
-                <a href="#" class="text-accent hover:underline">Learn more</a>
-            </div>
-            <div class="bg-gradient-to-t from-secondary to-primary p-8 rounded-2xl shadow-2xl">
-              <div class="mb-6">
-                <h3 class="text-3xl text-highlight font-extrabold mb-2">NetLists</h3>
-                <p class=" text-highlight font-medium text-md">Django App using IMDB API to allow users to create Lists/Collections of Media and rate/review them. Sign in accounts.</p>
-              </div>
-                    <!-- Technical Stack -->
-                    <div class="bg-background p-6 rounded-xl shadow-inner">
-                      <h5 class="text-lg text-foreground font-semibold mb-4">Technical Stack</h5>
-                      <ul class="list-disc pl-6 space-y-3">
-                        <li class="text-primary flex items-center">
-                          <span class="mr-2 text-accent">
-                            <!-- Python SVG -->
-                            <img src="static/icons/python.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                                                     
-                          </span>
-                          Python  
-                        </li>
-                        <li class="text-primary flex items-center">
-                          <span class="mr-2 text-accent">
-                            <img src="static/icons/django.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                          </span>
-
-                            Django
-                        </li>
-                        <li class="text-primary flex items-center">
-                          <span class="mr-2 text-accent">
-                            <img src="static/icons/tailwindcss.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                          </span>
-                          Tailwind CSS
-
-                        </li>
-                        <li class="text-primary flex items-center">
-                          <span class="mr-2 text-accent">
-                            <img src="static/icons/tailwindcss.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                          </span>
-                          X
-                        </li>
-                      </ul>
-                    </div>
-                <a href="#" class="text-accent hover:underline">Learn more</a>
-            </div>
-            <!-- Art Project -->
-            <div class="bg-gradient-to-t from-secondary to-primary p-8 rounded-2xl shadow-2xl">
-              <div class="mb-6">
-                  <h3 class="text-3xl text-highlight font-extrabold mb-2">Custom Sticker Art</h3>
-                  <p class=" text-highlight font-medium text-md">Shop to utilize skill in art based Software and Generative AI to Sell Custom Ordered Art as Stickers</p>
-              </div>  
-                    <!-- Technical Stack -->
-                    <div class="bg-background p-6 rounded-xl shadow-inner">
-                      <h5 class="text-lg text-foreground font-semibold mb-4">Technical Stack</h5>
-                      <ul class="list-disc pl-6 space-y-3">
-                        <li class="text-primary flex items-center">
-                          <span class="mr-2 text-accent">
-                            <!-- Python SVG -->
-                            <img src="static/icons/python.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                                                     
-                          </span>
-                          Python  
-                        </li>
-                        <li class="text-primary flex items-center">
-                          <span class="mr-2 text-accent">
-                            <img src="static/icons/django.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                          </span>
-
-                            Django
-                        </li>
-                        <li class="text-primary flex items-center">
-                          <span class="mr-2 text-accent">
-                            <img src="static/icons/tailwindcss.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                          </span>
-                          Tailwind CSS
-
-                        </li>
-                        <li class="text-primary flex items-center">
-                          <span class="mr-2 text-accent">
-                            <img src="static/icons/tailwindcss.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
-                          </span>
-                          X
-                        </li>
-                      </ul>
-                    </div>
-
-                <a href="#" class=" text-highlight hover:text-white hover:underline">Learn more</a>
-            </div>
-            <!-- Add more projects as needed -->
-        </div>
-    </section>
-
-    <section id="experience" class="my-16">
-        <h2 class="text-3xl font-bold text-center mb-8">Experience</h2>
-        <div class="space-y-8">
-
-            <div class="bg-gradient-to-r from-primary to-secondary p-8 rounded-2xl shadow-2xl">
-                <!-- Job Title & Company -->
-                <div class="mb-6">
-                  <h3 class="text-3xl text-highlight font-extrabold mb-2">Software Engineer</h3>
-                  <h4 class="text-xl text-accent font-medium flex items-center mb-2">
-                    Qualtech Systems Inc 
-                    <span class="ml-4 text-sm text-black font-semibold">Sept 2022 - Present</span>
-                  </h4>
-                  <p class="text-highlight font-medium text-md">
-                    Software Engineer utilizing Agile practices on a 2-week sprint cycle for a small team. Worked across multiple projects and repositories using Git. Focused on Testing, Building, Code Reviews, and QA demos for stakeholders.
-                  </p>
-                </div>
-              
-                <!-- Additional Responsibilities -->
-                <div class="bg-background p-6 rounded-xl shadow-inner">
-                  <h5 class="text-lg text-foreground font-semibold mb-4">Additional Responsibilities:</h5>
-                  <ul class="list-disc pl-6 space-y-3">
-                    <li class="text-primary flex items-center">
-                      <span class="mr-2 text-accent">
-                        <!-- Icon Example (Lucide React Icons or FontAwesome) -->
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m2 0a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v3a2 2 0 002 2m10 0a2 2 0 002 2v3a2 2 0 01-2 2H7a2 2 0 01-2-2v-3a2 2 0 002-2" />
-                        </svg>
-                      </span>
-                      Attended multiple conferences such as I/ITSEC 2023 to present/demo product.
-                    </li>
-                    <li class="text-primary flex items-center">
-                      <span class="mr-2 text-accent">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01m-6.938 4H19a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                      </span>
-                      Built projects/environments/installations for multiple distributions.
-                    </li>
-                    <li class="text-primary flex items-center">
-                      <span class="mr-2 text-accent">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a4 4 0 10-8 0v2m-3 5a4 4 0 018 0m-8 0a4 4 0 018 0M9 19h6m-3 0v-6" />
-                        </svg>
-                      </span>
-                      Met critical deadlines for multiple SBIR Phase 2+ projects. 
-                      <a 
-                        href="https://www.sbir.gov/sbc/qualtech-systems-inc-0" 
-                        class="text-secondary font-bold underline hover:text-primary mx-2 transition">
-                        View SBIR
-                      </a>
-                    </li>
-                    <li class="text-primary flex items-center">
-                      <span class="mr-2 text-accent">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A2 2 0 0122 9.745v4.51a2 2 0 01-1.447 1.92L15 14m-6 0l-4.553 2.276A2 2 0 012 14.255v-4.51a2 2 0 011.447-1.92L9 10m6 0v4m-6-4v4" />
-                        </svg>
-                      </span>
-                      Managed and tasked an intern to achieve project-based goals with LLMs and RAG implementations.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            <!-- Add more experiences as needed -->
+    <main class="container mx-auto p-4">
+        <!-- Experience Section Moved Up -->
+        <section id="experience" class="my-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Experience</h2>
             <div class="space-y-8">
-                <!-- Experience 2 -->
-                <div class="bg-gradient-to-r from-primary to-secondary p-8 rounded-2xl shadow-2xl">
-                    <!-- Title and Company -->
+
+                <div class="bg-gradient-to-r from-primary via-secondary/30 to-primary p-8 rounded-2xl shadow-2xl">
+                    <!-- Job Title & Company -->
                     <div class="mb-6">
-                        <h3 class="text-2xl text-highlight font-bold mb-2">Director</h3>
-                        <h4 class="text-xl text-accent mb-2">Town of Vernon Parks & Recreation <span class="text-black font-bold text-sm">Jan 2016 - June 2022.</span></h4> 
+                        <h3 class="text-3xl text-highlight font-extrabold mb-2">Software Engineer</h3>
+                        <div class="flex items-center gap-4 mb-4">
+                            <h4 class="text-xl text-accent font-medium">Qualtech Systems Inc</h4>
+                            <span class="px-3 py-1 rounded-full bg-accent/20 text-highlight text-sm font-medium">
+                                Sept 2022 - <span class="font-bold">Present</span>
+                            </span>
+                        </div>
                         <p class="text-highlight font-medium text-md">
-                            As a Summer Camp Director, I successfully led a vibrant camp of 80 kids and a dedicated team of 10 staff members,
-                            as well as managed an afterschool program with 40 children and 6 staff during the school year. My role involved
-                            meticulous management and daily scheduling for the staff, ensuring smooth and efficient operations. I excelled
-                            in communication, adeptly handling compromise, negotiation, and de-escalation to maintain a harmonious environment.
-                                Delivering clear and concise instructions was crucial, enabling children of all ages to understand and follow
-                                directions effectively. Additionally, I maintained open communication with parents, providing them with regular
-                                updates on their child's activities and progress. My continued leadership and commitment over the years have
-                                fostered a positive and enriching experience for both staff and campers.            
+                            As a Software Engineer in Qualtech Systems I utilize Agile based development practices on a 2-week sprint cycle for a small fast paced team in a diagnostic based software company. I have worked across multiple projects and repositories using Git. I am focused on Building, Testing, Code Reviews, and QA demos for stakeholders. I have also been focused on development and integration of Generative AI into the product.
                         </p>
                     </div>
-
+                  
                     <!-- Additional Responsibilities -->
-                    <div class="bg-background p-6 rounded-xl shadow-inner">
-                      <h5 class="text-lg text-foreground font-semibold mb-4">Additional Responsibilities:</h5>
-                      <ul class="list-disc pl-6 space-y-3">
-                        <li class="text-primary flex items-center">
-                          <span class="mr-2 text-accent">
-                            <!-- Icon Example (Lucide React Icons or FontAwesome) -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m2 0a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v3a2 2 0 002 2m10 0a2 2 0 002 2v3a2 2 0 01-2 2H7a2 2 0 01-2-2v-3a2 2 0 002-2" />
-                            </svg>
-                          </span>
-                          Management and Scheduling Daily for Staff
-                        </li>
-                        <li class="text-primary flex items-center">
-                          <span class="mr-2 text-accent">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01m-6.938 4H19a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                          </span>
-                          Communication with parents and information regarding their child(s) daily
-                        </li>
-                        <li class="text-primary flex items-center">
-                          <span class="mr-2 text-accent">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a4 4 0 10-8 0v2m-3 5a4 4 0 018 0m-8 0a4 4 0 018 0M9 19h6m-3 0v-6" />
-                            </svg>
-                          </span>
-                          Delivering Information/instructions clear and concise as to have a group of kids of all ages
-                          understand the first time 
-
-                        </li>
-                        <li class="text-primary flex items-center">
-                          <span class="mr-2 text-accent">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A2 2 0 0122 9.745v4.51a2 2 0 01-1.447 1.92L15 14m-6 0l-4.553 2.276A2 2 0 012 14.255v-4.51a2 2 0 011.447-1.92L9 10m6 0v4m-6-4v4" />
-                            </svg>
-                          </span>
-                          Continued leader/mentor-ship to same kids for 5+ years
-                        </li>
-                      </ul>
+                    <div class="bg-white/10 backdrop-blur p-6 rounded-xl shadow-lg mb-6">
+                        <h5 class="text-xl text-highlight font-semibold mb-4">Additional Responsibilities:</h5>
+                        <ul class="list-disc pl-6 space-y-3">
+                            <li class="text-highlight/90 flex items-center">
+                                <span class="mr-2 text-accent">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m2 0a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v3a2 2 0 002 2m10 0a2 2 0 002 2v3a2 2 0 01-2 2H7a2 2 0 01-2-2v-3a2 2 0 002-2" />
+                                    </svg>
+                                </span>
+                               Ticket based work for multiple projects across multiple repositories. Diverse languages and technologies. (Java, Python, C++, SQL, HTML, JS, PHP, SQL) (Bitbucket, Jira, Confluence, YouTrack, MS Office)
+                            </li>
+                            <li class="text-highlight/90 flex items-center">
+                                <span class="mr-2 text-accent">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01m-6.938 4H19a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </span>
+                                Built projects/environments/installations for multiple distributions. (Windows, Linux)
+                            </li>
+                            <li class="text-highlight/90 flex items-center">
+                                <span class="mr-2 text-accent">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a4 4 0 10-8 0v2m-3 5a4 4 0 018 0m-8 0a4 4 0 018 0M9 19h6m-3 0v-6" />
+                                    </svg>
+                                </span>
+                                Submit Reports and attend SBIR Based status meetings with Government Officials to discuss project progress and future goals in the project.
+                                <a href="https://www.sbir.gov/sbc/qualtech-systems-inc-0" 
+                                   class="text-accent font-bold underline hover:text-accent/80 mx-2 transition">
+                                    View SBIR
+                                </a>
+                            </li>
+                            <li class="text-highlight/90 flex items-center">
+                                <span class="mr-2 text-accent">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A2 2 0 0122 9.745v4.51a2 2 0 01-1.447 1.92L15 14m-6 0l-4.553 2.276A2 2 0 012 14.255v-4.51a2 2 0 011.447-1.92L9 10m6 0v4m-6-4v4" />
+                                    </svg>
+                                </span>
+                                Solely managed and tasked an intern to achieve project-based goals with LLMs and RAG implementations.
+                            </li>
+                        </ul>
                     </div>
 
-                </div>
-        </div>
-    </section>
-
-    <section id="interests" class="my-16 space-y-6">
-        <h2 class="text-3xl font-bold text-center text-primary mb-8">Interests</h2>
-        
-        <!-- Sports Interest -->
-        <div class="bg-primary p-6 rounded-lg shadow-lg">
-            <h3 class="text-2xl font-bold text-highlight mb-4">Sports</h3>
-            <p class="text-background mb-4">I have a deep passion for sports. Sports science and the evolution of sports utilizing analytics during our lifetime has been such an interesting thing to 
-                witness. My favorite sport is basketball, but I watch and have a deep respect for all professional athletes of all calibers. 
-                I was born in Connecticut and choose between New York and Boston for my favorite teams. I chose BOSTON 
-            </p>
-            <div class="border shadow-lg p-4 rounded-lg bg-background">
-                <p class=" text-primary" >Technical Stack Used</p>
-                <ul class=" text-secondary  mb-2 mx-4 list-disc">
-                    <li>Django</li>
-                    <li>Python</li>
-                    <li>HTML/JS/CSS</li>
-                    <li>API(s): IMDB</li>
-                </ul>
-            </div>
-            <a href="#" class="text-accent hover:underline">Learn more</a>
-        </div>
-
-        <!-- Hiking Camping Interest -->
-        <div class="bg-primary p-6 rounded-lg shadow-lg">
-            <h3 class="text-2xl text-highlight font-bold mb-4">Hiking/Camping</h3>
-            <p class=" text-background mb-4">I'm a lover of the great outdoors. From hikes, to full out backpacking in the wilderness, it's all right up my alley.
-                I've gone backpacking in the White Mountains in the North East, and even camping and hiking in the Pacific North West. It's a great way to reset and refresh.
-            </p>
-            <div class="border shadow-lg p-4 rounded-lg bg-background">
-
-
-
-
-
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="grid gap-4">
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-1.JPG" alt="">
-                        </div>
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-3.JPG" alt="">
-                        </div>
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-4.JPG" alt="">
-                        </div>
-                    </div>
-                    <div class="grid gap-4">
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-5b.jpg" alt="">
-                        </div>
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-7.jpg" alt="">
-                        </div>
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-2.jpg" alt="">
-                        </div>
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-10.jpg" alt="">
-                        </div>
-
-                    </div>
-                    <div class="grid gap-4">
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-6.jpg" alt="">
-                        </div>
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-9.jpg" alt="">
-                        </div>
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-10.jpg" alt="">
-                        </div>
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-13.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="grid gap-4">
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-11.jpg" alt="">
-                        </div>
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-12.jpg" alt="">
-                        </div>
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-14.jpg" alt="">
-                        </div>
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-5.JPG" alt="">
-                        </div>
-
+                    <!-- Key Accomplishments -->
+                    <div class="bg-white/10 backdrop-blur p-6 rounded-xl shadow-lg">
+                        <h5 class="text-xl text-highlight font-semibold mb-4">Key Accomplishments:</h5>
+                        <ul class="list-disc pl-6 space-y-3">
+                            <li class="text-highlight/90 flex items-center">
+                                <span class="mr-2 text-accent">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                    </svg>
+                                </span>
+                                Successfully developed a Generative AI Application for generating LMS learning content for Army and Navy Schoolhouses, improving content generation time by 20-60%. In use by multiple military schoolhouses. (Python, Flask, Tailwind CSS)
+                            </li>
+                            <li class="text-highlight/90 flex items-center">
+                                <span class="mr-2 text-accent">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                </span>
+                                Led development of open source plugin for Moodle LMS to allow for advanced student analytics and remediations. (PHP, Java)
+                            </li>
+                            <li class="text-highlight/90 flex items-center">
+                                <span class="mr-2 text-accent">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2M7 7h10" />
+                                    </svg>
+                                </span>
+                                Attended 5+ conferences such as I/ITSEC 2023 to present/demo product/project. Contributing/ed to Technical Paper for publication on Generative AI in Content Generation in 2025.
+                            </li>
+                            <li class="text-highlight/90 flex items-center">
+                                <span class="mr-2 text-accent">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </span>
+                                Met critical deadlines and project-based goals for more than two SBIR Phase Extention Proposals. Phase 2+ projects included.
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                
+                <!-- Add more experiences as needed -->
+                <div class="space-y-8">
+                    <!-- Experience 2 -->
+                    <div class="bg-gradient-to-r from-primary via-secondary/30 to-primary p-8 rounded-2xl shadow-2xl">
+                        <!-- Title and Company -->
+                        <div class="mb-6">
+                            <h3 class="text-2xl text-highlight font-bold mb-2">Director</h3>
+                            <div class="flex items-center gap-4 mb-4">
+                                <h4 class="text-xl text-accent">Town of Vernon Parks & Recreation</h4>
+                                <span class="px-3 py-1 rounded-full bg-accent/20 text-highlight text-sm font-medium">
+                                    Jan 2016 - June 2022
+                                </span>
+                            </div>
+                            <p class="text-highlight font-medium text-md">
+                                As a Summer Camp Director, I successfully led a vibrant camp of 80 kids and a dedicated team of 10 staff members,
+                                as well as managed an afterschool program with 40 children and 6 staff during the school year. My role involved
+                                meticulous management and daily scheduling for the staff, ensuring smooth and efficient operations. I excelled
+                                in communication, adeptly handling compromise, negotiation, and de-escalation to maintain a harmonious environment.
+                                    Delivering clear and concise instructions was crucial, enabling children of all ages to understand and follow
+                                    directions effectively. And most importantly, made it FUN! Additionally, I maintained open communication with parents, providing them with regular
+                                    updates on their child's activities and day to day happenings. My continued leadership and commitment over the years have
+                                    fostered a positive and enriching experience for both staff and campers.            
+                            </p>
+                        </div>
 
-                
-            </div>
-            <a href="#" class="text-accent hover:underline">Learn more</a>
-        </div>
-        <!-- Art Interest -->
-        <div class="bg-primary p-6 rounded-lg shadow-lg">
-          <h3 class="text-2xl text-highlight font-bold mb-4">Art Digital/AI</h3>
-          <p class=" text-background mb-4">I have a deep appreciation for visual art mediums. Whether it be traditional art forms, or modern visual media like animation/3d modeling, generative AI, digital art.
-            I have taken multiple art classes in university, as well as read books and taken various courses in my free time in various digital mediums as a hobby. Please enjoy some art I've made over that time and I hope it inspires anyone who sees this to 
-            embrace that creative nature that lies in all of us.
-          </p>
-          <div class="border shadow-lg p-4 rounded-lg bg-background">
+                        <!-- Additional Responsibilities -->
+                        <div class="bg-white/10 backdrop-blur p-6 rounded-xl shadow-lg mb-6">
+                            <h5 class="text-xl text-highlight font-semibold mb-4">Additional Responsibilities:</h5>
+                            <ul class="list-disc pl-6 space-y-3">
+                                <li class="text-highlight/90 flex items-center">
+                                    <span class="mr-2 text-accent">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m2 0a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v3a2 2 0 002 2m10 0a2 2 0 002 2v3a2 2 0 01-2 2H7a2 2 0 01-2-2v-3a2 2 0 002-2" />
+                                        </svg>
+                                    </span>
+                                    Management and Scheduling Daily for Staff
+                                </li>
+                                <li class="text-highlight/90 flex items-center">
+                                    <span class="mr-2 text-accent">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01m-6.938 4H19a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        </svg>
+                                    </span>
+                                    Communication with parents and information regarding their child(s) daily
+                                </li>
+                                <li class="text-highlight/90 flex items-center">
+                                    <span class="mr-2 text-accent">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a4 4 0 10-8 0v2m-3 5a4 4 0 018 0m-8 0a4 4 0 018 0M9 19h6m-3 0v-6" />
+                                        </svg>
+                                    </span>
+                                    Delivering Information/instructions clear and concise as to have a group of kids of all ages
+                                    understand the first time 
 
+                                </li>
+                                <li class="text-highlight/90 flex items-center">
+                                    <span class="mr-2 text-accent">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A2 2 0 0122 9.745v4.51a2 2 0 01-1.447 1.92L15 14m-6 0l-4.553 2.276A2 2 0 012 14.255v-4.51a2 2 0 011.447-1.92L9 10m6 0v4m-6-4v4" />
+                                        </svg>
+                                    </span>
+                                    Continued leader/mentor-ship to same kids for 5+ years
+                                </li>
+                            </ul>
+                        </div>
 
+                        <!-- Key Accomplishments -->
+                        <div class="bg-white/10 backdrop-blur p-6 rounded-xl shadow-lg">
+                            <h5 class="text-xl text-highlight font-semibold mb-4">Key Accomplishments:</h5>
+                            <ul class="list-disc pl-6 space-y-3">
+                                <li class="text-highlight/90 flex items-center">
+                                    <span class="mr-2 text-accent">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </span>
+                                    Directed and managed a team of staff and campers for multiple years. Summer camp during the summer and afterschool program during the school year while in college.
+                                </li>
+                                <li class="text-highlight/90 flex items-center">
+                                    <span class="mr-2 text-accent">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                        </svg>
+                                    </span>
+                                    6 years of experience, and 0 incidents. Created positive memories and experiences for kids and staff. 100% positive parent feedback. 
+                                </li>
+                                <li class="text-highlight/90 flex items-center">
+                                    <span class="mr-2 text-accent">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                        </svg>
+                                    </span>
+                                    Planned and executed multiple events and activities for campers and maintainted a safe, engaging, and fun environment for all. Sometimes spanning multiple days to a week.
+                                </li>
+                            </ul>
+                        </div>
 
-
-
-              <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <div class="grid gap-4">
-                      <div>
-                          <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/art/ai-14.png" alt="">
-                      </div>
-                      <div>
-                          <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/art/ai-13.png" alt="">
-                      </div>
-                      <div>
-                          <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/art/ai-12.png" alt="">
-                      </div>
-                      <div>
-                        <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/art/ai-15.png" alt="">
                     </div>
-                  </div>
-                  <div class="grid gap-4">
-                      <div>
-                          <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/art/ai-11.png" alt="">
-                      </div>
-                      <div>
-                          <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/art/ai-10.png" alt="">
-                      </div>
-                      <div>
-                          <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/art/ai-9.png" alt="">
-                      </div>
-                      <div>
-                          <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/art/ai-8.png" alt="">
-                      </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- Projects Section Moved Down -->
+        <section id="projects" class="my-16 bg-background">
+            <h2 class="text-3xl font-bold text-center text-primary mb-8">Personal Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-gradient-to-t from-primary/80 via-secondary/30 to-primary p-8 rounded-2xl shadow-2xl">
+                  <div class="mb-6">
+                    <h3 class="text-2xl font-bold text-highlight mb-4">NBA Matchup Analysis</h3>
+                    <p class="text-background mb-4">Flask App utilizing multiple APIs/Web Data to allow user to use NBA statistical data and matchup data, then display textual and visual analytics for NBA Matchups.</p>
                   </div>
-                  <div class="grid gap-4">
-                      <div>
-                          <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/art/ai-0.png" alt="">
-                      </div>
-                      <div>
-                          <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/art/ai-1.jpg" alt="">
-                      </div>
-                      <div>
-                          <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/art/ai-2.png" alt="">
-                      </div>
-                      <div>
-                          <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/art/ai-3.png" alt="">
-                      </div>
-                  </div>
-                  <div class="grid gap-4">
-                      <div>
-                          <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/art/ai-4.png" alt="">
-                      </div>
-                      <div>
-                          <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/art/ai-5.png" alt="">
-                      </div>
-                      <div>
-                          <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/art/ai-6.png" alt="">
-                      </div>
-                      <div>
-                          <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/art/ai-7.png" alt="">
-                      </div>
+                        <!-- Technical Stack -->
+                        <div class="bg-background p-6 rounded-xl shadow-inner">
+                          <h5 class="text-lg text-foreground font-semibold mb-4">Technical Stack</h5>
+                          <ul class="list-disc pl-6 space-y-3">
+                            <li class="text-primary flex items-center">
+                              <span class="mr-2 text-accent">
+                                <!-- Python SVG -->
+                                <img src="static/icons/python.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
+                                                     
+                              </span>
+                              Python  
+                            </li>
+                            <li class="text-primary flex items-center">
+                              <span class="mr-2 text-accent">
+                                <img src="static/icons/flask.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
+                              </span>
 
+                                Flask
+                            </li>
+                            <li class="text-primary flex items-center">
+                              <span class="mr-2 text-accent">
+                                <img src="static/icons/html.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
+                              </span>
+                              HTML/JS/CSS
+
+                            </li>
+                            <li class="text-primary flex items-center">
+                              <span class="mr-2 text-accent">
+                                <img src="static/icons/web.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
+                              </span>
+                              Web Scraping
+                            </li>
+                            <li class="text-primary flex items-center">
+                              <span class="mr-2 text-accent">
+                                <img src="static/icons/pandas.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
+                              </span>
+                              Pandas For Data handling
+                            </li>
+                          </ul>
+                        </div>
+                    <a href="#" class="text-accent hover:underline">Learn more</a>
+                </div>
+                <div class="bg-gradient-to-t from-primary/80 via-secondary/30 to-primary p-8 rounded-2xl shadow-2xl">
+                  <div class="mb-6">
+                    <h3 class="text-3xl text-highlight font-extrabold mb-2">NetLists</h3>
+                    <p class=" text-highlight font-medium text-md">Django App using IMDB API to allow users to create Lists/Collections of Media and rate/review them. Sign in accounts.</p>
+                  </div>
+                        <!-- Technical Stack -->
+                        <div class="bg-background p-6 rounded-xl shadow-inner">
+                          <h5 class="text-lg text-foreground font-semibold mb-4">Technical Stack</h5>
+                          <ul class="list-disc pl-6 space-y-3">
+                            <li class="text-primary flex items-center">
+                              <span class="mr-2 text-accent">
+                                <!-- Python SVG -->
+                                <img src="static/icons/python.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
+                                                     
+                              </span>
+                              Python  
+                            </li>
+                            <li class="text-primary flex items-center">
+                              <span class="mr-2 text-accent">
+                                <img src="static/icons/django.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
+                              </span>
+
+                                Django
+                            </li>
+                            <li class="text-primary flex items-center">
+                              <span class="mr-2 text-accent">
+                                <img src="static/icons/tailwindcss.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
+                              </span>
+                              Tailwind CSS
+
+                            </li>
+                            <li class="text-primary flex items-center">
+                              <span class="mr-2 text-accent">
+                                <img src="static/icons/tailwindcss.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
+                              </span>
+                              X
+                            </li>
+                          </ul>
+                        </div>
+                    <a href="#" class="text-accent hover:underline">Learn more</a>
+                </div>
+                <!-- Art Project -->
+                <div class="bg-gradient-to-t from-primary/80 via-secondary/30 to-primary p-8 rounded-2xl shadow-2xl">
+                  <div class="mb-6">
+                      <h3 class="text-3xl text-highlight font-extrabold mb-2">Custom Sticker Art</h3>
+                      <p class=" text-highlight font-medium text-md">Shop to utilize skill in art based Software and Generative AI to Sell Custom Ordered Art as Stickers</p>
+                  </div>  
+                        <!-- Technical Stack -->
+                        <div class="bg-background p-6 rounded-xl shadow-inner">
+                          <h5 class="text-lg text-foreground font-semibold mb-4">Technical Stack</h5>
+                          <ul class="list-disc pl-6 space-y-3">
+                            <li class="text-primary flex items-center">
+                              <span class="mr-2 text-accent">
+                                <!-- Python SVG -->
+                                <img src="static/icons/python.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
+                                                     
+                              </span>
+                              Python  
+                            </li>
+                            <li class="text-primary flex items-center">
+                              <span class="mr-2 text-accent">
+                                <img src="static/icons/django.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
+                              </span>
+
+                                Django
+                            </li>
+                            <li class="text-primary flex items-center">
+                              <span class="mr-2 text-accent">
+                                <img src="static/icons/tailwindcss.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
+                              </span>
+                              Tailwind CSS
+
+                            </li>
+                            <li class="text-primary flex items-center">
+                              <span class="mr-2 text-accent">
+                                <img src="static/icons/tailwindcss.svg" alt="tailwind icon" srcset="" class="mr-2 h-6 w-6">
+                              </span>
+                              X
+                            </li>
+                          </ul>
+                        </div>
+
+                    <a href="#" class=" text-highlight hover:text-white hover:underline">Learn more</a>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
+        </section>
+
+        <section id="interests" class="my-16 space-y-6">
+            <h2 class="text-3xl font-bold text-center text-highlight mb-8">Interests</h2>
+            
+            <!-- Sports Interest with Enhanced Design -->
+            <div class="bg-primary p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold text-highlight mb-4">Sports</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <p class="text-highlight mb-6">
+                            I have a deep passion for sports. Sports science and the evolution of sports utilizing analytics during our lifetime has been such an interesting thing to witness. My favorite sport is basketball, but I watch and have a deep respect for all professional athletes of all calibers. I was born in Connecticut and choose between New York and Boston for my favorite teams. I chose BOSTON!
+                        </p>
+                        <!-- Favorite Teams Section -->
+                        <div class="bg-white/10 backdrop-blur p-6 rounded-xl shadow-lg">
+                            <h4 class="text-xl text-highlight font-semibold mb-4">My Teams</h4>
+                            <div class="grid grid-cols-2 gap-4">
+                                <!-- Celtics -->
+                                <div class="flex items-center space-x-3 bg-white/5 p-3 rounded-lg">
+                                    <img src="https://a.espncdn.com/i/teamlogos/nba/500/bos.png" alt="Celtics" class="w-12 h-12 object-contain">
+                                    <div>
+                                        <h5 class="text-highlight font-medium">Boston Celtics</h5>
+                                        <p class="text-accent text-sm">NBA</p>
+                                    </div>
+                                </div>
+                                <!-- Red Sox -->
+                                <div class="flex items-center space-x-3 bg-white/5 p-3 rounded-lg">
+                                    <img src="https://a.espncdn.com/i/teamlogos/mlb/500/bos.png" alt="Red Sox" class="w-12 h-12 object-contain">
+                                    <div>
+                                        <h5 class="text-highlight font-medium">Boston Red Sox</h5>
+                                        <p class="text-accent text-sm">MLB</p>
+                                    </div>
+                                </div>
+                                <!-- Chargers -->
+                                <div class="flex items-center space-x-3 bg-white/5 p-3 rounded-lg">
+                                    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/lac.png" alt="Chargers" class="w-12 h-12 object-contain">
+                                    <div>
+                                        <h5 class="text-highlight font-medium">LA Chargers</h5>
+                                        <p class="text-accent text-sm">NFL</p>
+                                    </div>
+                                </div>
+                                <!-- UConn -->
+                                <div class="flex items-center space-x-3 bg-white/5 p-3 rounded-lg">
+                                    <img src="https://a.espncdn.com/i/teamlogos/ncaa/500/41.png" alt="UConn" class="w-12 h-12 object-contain">
+                                    <div>
+                                        <h5 class="text-highlight font-medium">UConn Huskies</h5>
+                                        <p class="text-accent text-sm">NCAA</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sports Analytics/Stats Section -->
+                    <div class="bg-white/10 backdrop-blur p-6 rounded-xl shadow-lg">
+                        <h4 class="text-xl text-highlight font-semibold mb-4">Sports Analytics</h4>
+                        <p class="text-highlight mb-4">
+                            My passion for sports extends into my professional life. I have a deep interest in sports analytics and the use of data to improve player performance and team strategies. I have have combined my software engineering background with sports data to create a Full Stack NBA Analytics Website.
+                            <hr class="mb-1">This project is what I spent the most of my time on, and have learned the most from. It is a Full Stack application thats hosted on AWS and full HTTP/HTTPS.
+                        </p>
+                        <div class="space-y-4 mt-2">
+                            <div class="bg-white/5 p-2 rounded-lg">
+                                <h5 class="text-accent font-medium mb-2">Yuno Ball</h5>
+                                <p class="text-highlight/80 text-sm">
+                                    View all things NBA and NBA Analytics, utilizing the power of the NBA API, Flask, PostgreSQL, and Tailwind CSS.
+                                </p>
+                                <a href="https://yunoball.xyz" class="text-accent hover:underline">View Project</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hiking Camping Interest -->
+            <div class="bg-primary p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl text-highlight font-bold mb-4">Hiking/Camping</h3>
+                <p class=" text-background mb-4">I'm a lover of the great outdoors. From hikes, to full out backpacking in the wilderness, it's all right up my alley.
+                    I've gone backpacking in the White Mountains in the North East, and even camping and hiking in the Pacific North West. It's a great way to reset and refresh.
+                </p>
+                <div class="border shadow-lg p-4 rounded-lg bg-background">
+
+
+
+
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="grid gap-4">
+                            <div>
+                                <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-1.JPG" alt="">
+                            </div>
+                            <div>
+                                <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-3.JPG" alt="">
+                            </div>
+                            <div>
+                                <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-4.JPG" alt="">
+                            </div>
+                        </div>
+                        <div class="grid gap-4">
+                            <div>
+                                <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-5b.jpg" alt="">
+                            </div>
+                            <div>
+                                <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-7.jpg" alt="">
+                            </div>
+                            <div>
+                                <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-2.jpg" alt="">
+                            </div>
+                            <div>
+                                <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-10.jpg" alt="">
+                            </div>
+
+                        </div>
+                        <div class="grid gap-4">
+                            <div>
+                                <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-6.jpg" alt="">
+                            </div>
+                            <div>
+                                <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-9.jpg" alt="">
+                            </div>
+                            <div>
+                                <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-10.jpg" alt="">
+                            </div>
+                            <div>
+                                <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-13.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="grid gap-4">
+                            <div>
+                                <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-11.jpg" alt="">
+                            </div>
+                            <div>
+                                <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-12.jpg" alt="">
+                            </div>
+                            <div>
+                                <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-14.jpg" alt="">
+                            </div>
+                            <div>
+                                <img class="h-auto max-w-full rounded-lg" src="/static/images/interests/hiking/camping-5.JPG" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                    
+
+                    
+                </div>
+                <a href="#" class="text-accent hover:underline">Learn more</a>
+            </div>
+            <!-- Art Interest -->
+            <div class="bg-primary p-6 rounded-lg shadow-lg">
+              <h3 class="text-2xl text-highlight font-bold mb-4">Art Digital/AI</h3>
+              <p class="text-highlight mb-4">I have a deep appreciation for visual art mediums. Whether it be traditional art forms, or modern visual media like animation/3d modeling, generative AI, digital art.
+                I have taken multiple art classes in university, as well as read books and taken various courses in my free time in various digital mediums as a hobby. Please enjoy some art I've made over that time and I hope it inspires anyone who sees this to 
+                embrace that creative nature that lies in all of us.
+              </p>
+              <div class="relative">
+                  <!-- Art Gallery Carousel -->
+                  <div class="overflow-hidden relative rounded-lg">
+                      <div class="flex transition-transform duration-500 ease-in-out" id="art-carousel">
+                          <!-- Art images will be loaded here via JavaScript -->
+                      </div>
+                      <!-- Navigation buttons -->
+                      <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-r-lg hover:bg-black/70" id="prev-btn">
+                          <i class="fas fa-chevron-left"></i>
+                      </button>
+                      <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-l-lg hover:bg-black/70" id="next-btn">
+                          <i class="fas fa-chevron-right"></i>
+                      </button>
+                      <!-- Dots indicator -->
+                      <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2" id="carousel-dots">
+                      </div>
+                  </div>
+                  <!-- Thumbnail strip -->
+                  <div class="mt-4 flex space-x-2 overflow-x-auto pb-2" id="thumbnail-strip">
+                      <!-- Thumbnails will be loaded here via JavaScript -->
                   </div>
               </div>
-              
-
-              
+              <a href="#" class="text-accent hover:underline">Learn more</a>
           </div>
-          <a href="#" class="text-accent hover:underline">Learn more</a>
-      </div>
-            <!-- Add more projects as needed -->
-        
-        <div class="space-y-4 text-center">
-            <p class="text-gray-700">As a 25 year old Software Engineer that grew up in Connecticut. I have interests for many things and love to make conversation on many topics. But mainly I love; Basketball (all sports) , Movies, Hiking/Biking/Camping, Art, & Space</p>
-            <!-- Add more interests as needed -->
-        </div>
-    </section>
-</main>
+                <!-- Add more projects as needed -->
+            
+            <div class="space-y-4 text-center">
+                <p class="text-gray-700">As a 25 year old Software Engineer that grew up in Connecticut. I have interests for many things and love to make conversation on many topics. But mainly I love; Basketball (all sports) , Movies, Hiking/Biking/Camping, Art, & Space</p>
+                <!-- Add more interests as needed -->
+            </div>
+        </section>
+    </main>
 
-<footer class="bg-white shadow p-4 text-center">
-    <p class="text-gray-700">&copy; 2024 Jordan Thurston. All rights reserved.</p>
-</footer>
+    <footer class="bg-white shadow p-4 text-center">
+        <p class="text-gray-700">&copy; 2024 Jordan Thurston. All rights reserved.</p>
+    </footer>
 
 </body>
 <script src="scripts.js"></script>
-
-<script type="module" src="/main.js"></script>
-
-
 </html>
